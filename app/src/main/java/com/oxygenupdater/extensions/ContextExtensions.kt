@@ -90,6 +90,7 @@ fun Context.openEmail() {
     val systemVersionProperties by getKoin().inject<SystemVersionProperties>()
     val oxygenOsVersion = systemVersionProperties.oxygenOSVersion
     val oxygenOsOtaVersion = systemVersionProperties.oxygenOSOTAVersion
+    val fingerprint: String = Build.FINGERPRINT
     val osType = systemVersionProperties.osType
     val actualDeviceName = systemVersionProperties.oxygenDeviceName
     val appVersion = BuildConfig.VERSION_NAME
@@ -122,6 +123,7 @@ fun Context.openEmail() {
                         • Update method: $chosenUpdateMethod
                         • OS version: $oxygenOsVersion ($osType)
                         • OTA version: $oxygenOsOtaVersion
+                        • Build fingerprint: $fingerprint
                         • Advanced mode: $advancedModeEnabled
                         • App version: $appVersion
                         --------------------
